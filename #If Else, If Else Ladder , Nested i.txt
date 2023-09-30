@@ -1,0 +1,562 @@
+#If Else, If Else Ladder , Nested if Else :
+
+1. Write a program to check if a number is positive or negative.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Number to check: ");
+		
+		int number = scan.nextInt();
+		
+		if(number > 0) {
+		    System.out.println("The number "+ number + " is positive number");
+		}else if (number < 0) {
+		    System.out.println("The number "+ number + " is negative number");
+		}else {
+		    System.out.println("The number is Zero");
+		}
+	}
+}
+
+
+2. Write code to determine whether a given year is a leap year or not.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Year to check it is leap year or not: ");
+		
+		int year = scan.nextInt();
+		
+		if(year%4 == 0) {
+		    System.out.println("The Year "+ year + " is a leap year");
+		}else {
+		    System.out.println("The Year "+ year + " is not a leap year");
+		}
+	}
+}
+
+
+3. Create a program that checks if a character is a vowel or consonant.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Character to Check vowel or not: ");
+		
+		char ch = scan.next().charAt(0);
+		
+		if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'){
+		    System.out.println("The Character "+ ch + " is a vowel.");
+		}else {
+		    System.out.println("The Character "+ ch + " is a consonant.");
+		}
+	}
+}
+
+
+4. Write a program that compares two numbers and outputs the larger one.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter first Number: ");
+		int number1 = scan.nextInt();
+		
+		System.out.println("Enter second Number: ");
+		int number2 = scan.nextInt();
+		
+		if(number1 > number2 ) {
+		    System.out.println("The larger number is: " + number1);
+		}else {
+		    System.out.println("The larger number is: " + number2);
+		}
+	}
+}
+
+
+4. Implement a code that determines if a person is eligible to vote based on their age.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please Enter your age to check eligibility: ");
+		int age = scan.nextInt();
+		
+		
+		if(age > 18 ) {
+		    System.out.println("Your eligible to make vote");
+		}else {
+		    System.out.println("Your not eligible to make vote");
+		}
+	}
+}
+
+5. Create a program that checks if a given string is a palindrome.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please Enter a String value to check it is palindrome or not: ");
+		String str = scan.nextLine();
+		
+		/*  Brute force approach.
+		
+		    1.we can take the string in another string value
+		    2. Reverse the second string.
+		    3. Using a for loop from 0 to str.length()-1.
+		    4. Make condition that charAt(i) of both the string is same or not.
+		    5. If it is not same return false or true.
+		*/
+		
+		int si = 0;
+		int ei = str.length()-1;
+		
+		while (si <= ei) {
+		    if(str.charAt(si) != str.charAt(ei)){
+		        System.out.println("The given string is not a palindromic string");
+		    }
+		    si++;
+		    ei--;
+		}
+		System.out.println("The given string is palindromic string.");
+	}
+}
+
+
+6. Write code to find the maximum of three numbers.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please Enter first number: ");
+		int number1 = scan.nextInt();
+		
+		System.out.println("Please Enter first number: ");
+		int number2 = scan.nextInt();
+		
+		System.out.println("Please Enter first number: ");
+		int number3 = scan.nextInt();
+		
+		if( number1 > number2 && number1 > number3){
+		    System.out.println("The maximum number is: " + number1);
+		}else if(number2 > number3) {
+		    System.out.println("The maximum number is: " + number2);
+		}else
+		System.out.println("The maximum number is: " + number3);
+	}
+}
+
+
+7. Implement a program that determines if a year is a leap year or not using a nested if-else statement.
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Year to check it is leap year or not: ");
+		
+		int year = scan.nextInt();
+		
+		if(year%4 == 0) {
+		    System.out.println("The Year "+ year + " is a leap year");
+		}else {
+		    System.out.println("The Year "+ year + " is not a leap year");
+		}
+	}
+}
+
+
+8. Write a program to calculate the grade for a given mark based on a grading scale.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter marks to check grade: ");
+        int mark = scan.nextInt();
+        char grade;
+        
+        if (mark >= 85 && mark <= 100) {
+            grade = 'A';
+        } else if (mark >= 75 && mark < 84) {
+            grade = 'B';
+        } else if (mark >= 65 && mark < 75) {
+            grade = 'C';
+        } else if (mark >= 50 && mark < 65) {
+            grade = 'D';
+        } else if(mark >= 35 && mark < 50){
+            grade = 'E';
+        } else if (mark >= 0 && mark < 35) {
+            grade = 'F';
+        } else {
+            grade = 'X'; // Invalid input
+        }
+        System.out.println("The grade of the student with marks: "+mark+ " is: "+grade); 
+    }
+}
+
+9. Create a program to check if a user is a teenager, an adult, or a senior citizen based on their age.
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter age to check: ");
+        int age = scan.nextInt();
+        
+        if (age < 18 ) {
+            System.out.println("As per entered age "+age+" you are a teenager.");
+        } else if (age >= 18 && age < 50) {
+	    System.out.println("As per entered age "+age+" you are an adult.");
+        } else {
+            System.out.println("As per entered age "+age+" you are a senior citizen.");
+        }
+     
+    }
+}
+
+10. Write a code that determines whether a triangle is equilateral, isosceles, or scalene.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter value for side A: ");
+        int sideA = scan.nextInt();
+        
+        System.out.print("Enter value for side B: ");
+        int sideB = scan.nextInt();
+        
+        System.out.print("Enter value for side C: ");
+        int sideC = scan.nextInt();
+        
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+            System.out.println("invalid input"); // Invalid input (negative or zero side lengths)
+        } else if (sideA == sideB && sideB == sideC) {
+            System.out.println("It is an equilateral triangle"); // All sides are equal
+        } else if (sideA == sideB || sideB == sideC || sideA == sideC) {
+            System.out.println("It is an isosceles triangle"); // Two sides are equal
+        } else {
+            System.out.println("It is a scalene triangle"); // No sides are equal
+        }
+     
+    }
+}
+
+11. Implement a program to check if a given number is even or odd without using the modulus operator (%).
+
+import java.util.*;
+/*In this program, we use the bitwise AND operator & to check the least significant bit of the binary representation of the number. If the least significant bit is 0, the number is even; otherwise, it's odd.*/
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please Enter number: ");
+		int number = scan.nextInt();
+		
+		if ((number & 1) == 0) {
+            		System.out.println(number + " is even.");
+        	} else {
+            		System.out.println(number + " is odd.");
+        	}
+
+
+
+/*In this approach, we divide the number by 2 and then multiply the result by 2 again. If the result is equal to the original number, it means the number is even; otherwise, it's odd. This way, we've avoided using the modulus operator.*/
+ 		if ((number / 2) * 2 == number) {
+           		System.out.println(number + " is even.");
+        	} else {
+            		System.out.println(number + " is odd.");
+        	}
+        
+	}
+}
+
+12. Write a program that classifies a student's grade based on their score in multiple subjects.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the marks of a student in all the subjects. ");
+        System.out.print("Enter marks for 1st Language: ");
+        int sub1 = scan.nextInt();
+        
+        System.out.print("Enter marks for 2nd Language: ");
+        int sub2 = scan.nextInt();
+        
+        System.out.print("Enter marks for 3rd Language: ");
+        int sub3 = scan.nextInt();
+        
+        System.out.print("Enter marks for Mathematics: ");
+        int sub4 = scan.nextInt();
+        
+        System.out.print("Enter marks for Science: ");
+        int sub5 = scan.nextInt();
+        
+        System.out.print("Enter marks for Social Science: ");
+        int sub6 = scan.nextInt();
+        
+        int numOfSubjects = 6;
+        int obtainedMarks = sub1+sub2+sub3+sub4+sub5+sub6;
+        System.out.println(obtainedMarks);
+        
+        
+        int marks = obtainedMarks/numOfSubjects;
+        System.out.println(marks);
+        char grade;
+        
+        if (marks >= 85 && marks <= 100) {
+            grade = 'A';
+        } else if (marks >= 75 && marks < 84) {
+            grade = 'B';
+        } else if (marks >= 65 && marks < 75) {
+            grade = 'C';
+        } else if (marks >= 50 && marks < 65) {
+            grade = 'D';
+        } else if(marks >= 35 && marks < 50){
+            grade = 'E';
+        } else if (marks >= 0 && marks < 35) {
+            grade = 'F';
+        } else {
+            grade = 'X'; // Invalid input
+        }
+        System.out.println("The grade of the student with average marks: "+marks+ " is: "+grade);
+     
+    }
+}
+
+13. Create a program that determines the type of a triangle based on its angles.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the measure of angle A: ");
+        double angleA = scan.nextDouble();
+
+        System.out.print("Enter the measure of angle B: ");
+        double angleB = scan.nextDouble();
+
+        System.out.print("Enter the measure of angle C: ");
+        double angleC = scan.nextDouble();
+        
+        if (angleA + angleB + angleC == 180) {
+            if (angleA == 90 || angleB == 90 || angleC == 90) {
+                System.out.System.out.println("Right Angle Triangle"); 
+            } else if (angleA < 90 && angleB < 90 && angleC < 90) {
+                System.out.System.out.println("Acute Angle Triangle");
+            } else {
+                System.out.System.out.println("Obtuse Angle Triangle"); 
+            }
+        } else {
+            System.out.System.out.println("Invalid Triangle");// The angles don't add up to 180 degrees
+        }
+    }
+}
+
+14. Write a code to check if a number is divisible by both 5 and 7.
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Number to Check: ");
+		
+		int number = scan.nextInt();
+		
+		if(number % 35 == 0 ){
+		    System.out.println("The Number "+ number + " is divisible by both 5 & 7.");
+		}else {
+		    System.out.println("The Number "+ number + " is not divisible by both 5 & 7."");
+		}
+	}
+}
+
+
+15. Implement a program that calculates the commission amount based on sales amount using an if-else ladder.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the sales amount: ");
+        double salesAmount = scanner.nextDouble();
+        
+        double commissionRate;
+        double commission;
+        
+        if (salesAmount <= 10000) {
+            commissionRate = 0.05; // 5% commission rate for sales <= 10,000
+        } else if (salesAmount <= 20000) {
+            commissionRate = 0.08; // 8% commission rate for sales <= 20,000
+        } else if (salesAmount <= 50000) {
+            commissionRate = 0.1; // 10% commission rate for sales <= 50,000
+        } else {
+            commissionRate = 0.12; // 12% commission rate for sales > 50,000
+        }
+            
+        commission = salesAmount * commissionRate;
+            
+        System.out.println("Sales Amount: " + salesAmount);
+        System.out.println("Commission Rate: " + (commissionRate * 100) + "%");
+        System.out.println("Commission Amount: " + commission);
+    }
+}
+
+
+16. Write a program to check if a given year is a century year or not.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter the year: ");
+        int year = scan.nextInt();
+        
+        
+        if (year % 100 == 0) {
+            System.out.println("The year "+ year + " is a century year.");
+        } else {
+            System.out.println("The year "+ year + " is not a century year.");
+        }
+            
+    }
+}
+/* we can also check the century year, if the last 2 digits are zero(year % 100). */
+
+
+17. Create a program that determines if a number is a perfect square or not.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter the number: ");
+        double number = scan.nextDouble();
+        
+        double squareRoot = Math.sqrt(number);
+        
+        if (squareRoot == Math.floor(squareRoot)) {
+            System.out.println("The number "+ number + " is a perfect square number.");
+        } else {
+            System.out.println("The number "+ number + " is not a perfect square number.");
+        }
+            
+    }
+}
+
+
+18. Write code to determine the eligibility of a person for a driving license based on their age and eyesight.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter your age: ");
+        int age = scan.nextInt();
+        
+        System.out.println("Enter your eyesight: ");
+        double eyesightPower = scan.nextDouble();
+        
+        
+        if (age >= 18) {
+            if (eyesightPower >= 0.8) {
+                System.out.println("Congratulations! You are eligible for a driving license.");
+            } else {
+                System.out.println("Sorry, you are not eligible for a driving license due to poor eyesight.");
+            }
+        } else {
+            System.out.println("Sorry, you are not eligible for a driving license due to age restrictions.");
+        }
+            
+    }
+}
+
+
+19. Implement a program to check if a number is a prime number or not.
+
+import java.util.Scanner;
+
+public class Main
+{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter number to check prime or not: ");
+        int number = scan.nextInt();
+        
+        
+        if (number <= 1) {
+            System.out.println("The number "+ number + " is not a prime number.");
+        }else if(number <= 3){
+            System.out.println("The number " +number + " is a prime number.");
+        } else if(number % 2 == 0 || number %3 == 0){
+            System.out.println("The number "+ number + " is not a prime number.");
+        } else {
+            System.out.println("The number " +number + " is a prime number.");
+        }
+            
+    }
+}
